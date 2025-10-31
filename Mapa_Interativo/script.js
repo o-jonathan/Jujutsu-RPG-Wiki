@@ -9,7 +9,7 @@ const map = L.map('map', {
 // Image setup
 const mapWidth = 2400;  // pixels of your map image
 const mapHeight = 3200;
-const imageUrl = 'map.jpg'; // path to your custom RPG map image
+const imageUrl = './assets/map.jpg'; // path to your custom RPG map image
 
 // Coordinate bounds for the image
 const bounds = [[0, 0], [mapHeight, mapWidth]];
@@ -23,16 +23,16 @@ map.setMaxBounds(bounds);
 map.options.maxBoundsViscosity = 1.0;
 
 // Define some markers with positions (x, y)
-fetch('markers.json')
+fetch('./assets/markers.json')
   .then(response => response.json())
   .then(locations => {
     locations.forEach(loc => {
 
       let iconSize = 32;
       const customIcon = L.icon({
-        iconUrl: './Marker.svg',
+        iconUrl: './assets/icons/Base.svg',
         iconSize: [iconSize, iconSize],
-        iconAnchor: [(iconSize / 2), (iconSize / 2)], // center the icon
+        iconAnchor: [(iconSize / 2), (iconSize / 2)],
         popupAnchor: [0, -(iconSize / 2)]
       });
 
@@ -48,3 +48,12 @@ fetch('markers.json')
 map.on('mousemove', function (e) {
   document.getElementById('coords').innerHTML = 'Lat: ' + Math.floor(e.latlng.lat) + ' Lon: ' + Math.floor(e.latlng.lng);
 });
+
+map.on('click', function (e) {
+  if (e.originalEvent.shiftKey) {
+    const { lat, lng } = e.latlng;
+    const text = lat + ', ' + lng;
+    navigator.clipboard.writeText(text);
+    confirm('Copiado: ' + text);
+  }
+})

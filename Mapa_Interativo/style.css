@@ -13,7 +13,7 @@ html, body {
   background: #111;
 }
 
-hr {
+#map hr {
   border: 1px solid var(--secondary);
 }
 
@@ -22,19 +22,28 @@ hr {
   height: 100%;
 }
 
-#coords {
-  background-color: white;
+#map .coordbox {
+  opacity: 0.75;
+  background-color: var(--primary);
+  color: var(--secondary);
   padding-inline: 0.5em;
+  padding-block: 0.25em;
   font-size: 16px;
+  border: 1px solid var(--secondary);
   border-radius: 4px;
   position: absolute;
-  bottom: 5px;
-  left: 5px;
-  z-index: 9999;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999;
+  transition: all ease 0.3s;
+}
+
+#map .coordbox:hover {
+  opacity: 1;
 }
 
 /* Optional: custom popup styling */
-.leaflet-popup-content-wrapper {
+#map .leaflet-popup-content-wrapper {
   color: var(--secondary);
   background: var(--primary);
   border: 1px solid var(--secondary);
@@ -42,7 +51,7 @@ hr {
   border-radius: 8px;
 }
 
-.leaflet-tooltip {
+#map .leaflet-tooltip {
   color: var(--secondary);
   background: var(--primary);
   border: 1px solid var(--secondary);
