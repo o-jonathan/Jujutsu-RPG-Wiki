@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Escola Jujutsu",
+    "coords": [2585, 960],
+    "description": "A Escola de Jujutsu."
+  },
+  {
+    "name": "Montanha de Ferro",
+    "coords": [2435, 695],
+    "description": "Domínio de Hiroshi."
+  },
+  {
+    "name": "Os Remanescentes",
+    "coords": [1345, 1580],
+    "description": "Domínio de Hiroshi."
+  },
+  {
+    "name": "Clã Zenin",
+    "coords": [1895, 638],
+    "description": "Completamente destruído."
+  },
+  {
+    "name": "Clã Gojo",
+    "coords": [1580, 825],
+    "description": "Esnobes."
+  },
+  {
+    "name": "Clã Kamo",
+    "coords": [1255, 1168],
+    "description": "Clã do sangue."
+  },
+  {
+    "name": "Clã Kyan",
+    "coords": [935, 1208],
+    "description": "Clã do selo."
+  },
+  {
+    "name": "Mercado Negro",
+    "coords": [1770, 1485],
+    "description": "Domínio de Jong Gun."
+  },
+  {
+    "name": "Império",
+    "coords": [522, 1950],
+    "description": "Domínio de Qin Shi Huang."
+  }
+]

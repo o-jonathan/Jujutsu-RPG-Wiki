@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "Satoru Gojo",
+    "cla": "Gojo",
+    "tecnica": "Ilimitado / Seis Olhos",
+    "imagem": "https://via.placeholder.com/800x400",
+    "descricao": "O feiticeiro mais poderoso do mundo. Sua simples presença altera o equilíbrio das maldições."
+  },
+  {
+    "nome": "O Sussurro",
+    "cla": "—",
+    "tecnica": "Manipulação de Memórias",
+    "imagem": "https://via.placeholder.com/800x400",
+    "descricao": "Entidade amaldiçoada que absorve lembranças humanas, moldando ilusões aterrorizantes."
+  }
+]

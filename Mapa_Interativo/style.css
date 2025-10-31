@@ -1,0 +1,52 @@
+:root {
+  --primary: #331710;
+  --secondary: #a27e4e;
+}
+
+* {
+    font-family: 'times new roman';
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #111;
+}
+
+hr {
+  border: 1px solid var(--secondary);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#coords {
+  background-color: white;
+  padding-inline: 0.5em;
+  font-size: 16px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 9999;
+}
+
+/* Optional: custom popup styling */
+.leaflet-popup-content-wrapper {
+  color: var(--secondary);
+  background: var(--primary);
+  border: 1px solid var(--secondary);
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.leaflet-tooltip {
+  color: var(--secondary);
+  background: var(--primary);
+  border: 1px solid var(--secondary);
+  font-weight: bold;
+  font-size: 14px;
+  padding-block: 0;
+}

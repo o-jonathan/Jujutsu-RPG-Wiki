@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu RPG — Fichas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h1>JUJUTSU RPG</h1>
+    <nav>
+      <a href="index.html">📖 História</a>
+      <a href="fichas.html" class="active">🎭 Fichas</a>
+      <a href="livro.html">📚 Livro</a>
+      <a href="npcs.html">👥 NPCs</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <h2>🎭 Fichas dos Jogadores</h2>
+
+    <div id="conteudo" class="conteudo"></div>
+
+    <footer>© 2025 Jujutsu RPG — Portal da Campanha</footer>
+  </main>
+
+  <script>
+    const fichas = [
+      {
+        nome: "Yuta Okkotsu",
+        classe: "Feiticeiro",
+        nivel: 5, // CORREÇÃO: mudado de "Grau" para "nivel"
+        energia: 90,
+        habilidades: ["Controle de Energia Amaldiçoada", "Técnica de Invocação"],
+        imagem: "https://i.pinimg.com/originals/55/b3/06/55b306f2b6a77c510b64e79ad379d852.jpg" // IMAGEM CORRIGIDA
+      },
+      {
+        nome: "Maki Zenin",
+        classe: "Feiticeiro",
+        nivel: 4, // CORREÇÃO: mudado de "Grau" para "nivel"
+        energia: 80,
+        habilidades: ["Força física", "Uso de armas amaldiçoadas"],
+        imagem: "https://i.pinimg.com/736x/1a/b4/85/1ab485fd9cb0a1785716fc0b3e049b2d.jpg"
+      },
+      {
+        nome: "Toge Inumaki",
+        classe: "Feiticeiro",
+        nivel: 4, // CORREÇÃO: mudado de "Grau" para "nivel"
+        energia: 75,
+        habilidades: ["Fala amaldiçoada", "Ataque à distância"],
+        imagem: "https://tse1.mm.bing.net/th/id/OIP.qcMaHPJUt-jO8TxzB5JhwgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      {
+        nome: "Suguru Geto",
+        classe: "Feiticeiro",
+        nivel: "Especial", // CORREÇÃO: mudado de "Grau" para "nivel"
+        energia: 80,
+        habilidades: ["Força física", "Uso de armas amaldiçoadas", "Manipulação de maldições"],
+        imagem: "https://i.pinimg.com/originals/13/d0/27/13d027a4f6a98e8a39aba9754d60fb9c.png"
+      }
+    ];
+
+    function carregarDados() {
+      const container = document.getElementById('conteudo');
+      container.innerHTML = '';
+
+      fichas.forEach(ficha => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <img src="${ficha.imagem}" alt="${ficha.nome}" onerror="this.src='https://via.placeholder.com/200x300/6b00ff/ffffff?text=Imagem+Não+Encontrada'">
+          <h3>${ficha.nome}</h3>
+          <p><strong>Classe:</strong> ${ficha.classe}</p>
+          <p><strong>Nível:</strong> ${ficha.nivel}</p>
+          <p><strong>Energia:</strong> ${ficha.energia}%</p>
+          <p><strong>Habilidades:</strong> ${ficha.habilidades.join(', ')}</p>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    carregarDados();
+  </script>
+</body>
+</html>
