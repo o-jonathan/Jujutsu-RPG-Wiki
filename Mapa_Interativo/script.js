@@ -35,7 +35,7 @@ fetch('./assets/markers.json')
       if (!overlays[layerName]) {
         overlays[layerName] = L.layerGroup().addTo(map);
       }
-      
+
       let iconSize = 32;
       const customIcon = L.icon({
         iconUrl: './assets/icons/' + loc.icon + '.svg',
@@ -45,28 +45,28 @@ fetch('./assets/markers.json')
       });
 
       L.marker(loc.coords, { icon: customIcon })
-      .addTo(overlays[layerName])
-      .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
-      .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
+        .addTo(overlays[layerName])
+        .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
+        .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
     });
-    L.control.layers(null, overlays, {collapsed: false}).addTo(map);
+    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
   })
   .catch(err => console.error('Error loading markers:', err));
 
-  overlays["Domínios"] = L.layerGroup().addTo(map);
+overlays["Domínios"] = L.layerGroup().addTo(map);
 
-  fetch('./assets/areas.json')
-    .then(response => response.json())
-    .then(areas => {
-      areas.forEach(area => {
-        L.polygon(area.coords, {color: area.color})
+fetch('./assets/areas.json')
+  .then(response => response.json())
+  .then(areas => {
+    areas.forEach(area => {
+      L.polygon(area.coords, { color: area.color, fillOpacity: 0.5, weight: 4 })
         .addTo(overlays["Domínios"]);
-      });
-    }).catch(err => console.error('Error loading areas:', err));
+    });
+  }).catch(err => console.error('Error loading areas:', err));
 
 
-  
-  // Live Coordinates
+
+// Live Coordinates
 map.on('mousemove', function (e) {
   document.getElementById('coords').innerHTML = 'Lat: ' + Math.floor(e.latlng.lat) + ' Lon: ' + Math.floor(e.latlng.lng);
 });

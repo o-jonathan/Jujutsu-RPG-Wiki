@@ -5,6 +5,7 @@
 
 * {
     font-family: 'times new roman';
+    user-select: none;
 }
 
 html, body {
@@ -88,7 +89,7 @@ html, body {
   border-bottom-color: var(--secondary);
 }
 
-
 #map .leaflet-control-zoom-out span, #map .leaflet-control-zoom-in span {
   color: var(--secondary);
 }
+
