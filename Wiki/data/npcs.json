@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "Takezo Shinmen",
+    "cla": "Shinmen",
+    "tecnica": "Técnica do Takezo <b>:</b>D",
+    "imagem": "assets/takezo.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Nariyoshi Miyagi",
+    "cla": "",
+    "tecnica": "Miyagi-do",
+    "imagem": "assets/miyagi.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Seiryuu Gojo",
+    "cla": "Gojo",
+    "tecnica": "Limitado",
+    "imagem": "assets/seiryuu.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Aratake Kyan",
+    "cla": "Kyan",
+    "tecnica": "Selamento Kyan",
+    "imagem": "assets/aratake.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Qin Shi Huang",
+    "cla": "Imperial",
+    "tecnica": "",
+    "imagem": "assets/qin.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Arima Kishou",
+    "cla": "Imperial",
+    "tecnica": "",
+    "imagem": "assets/arima.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Hayato",
+    "cla": "Imperial",
+    "tecnica": "Chamas Carmesim",
+    "imagem": "assets/hayato.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Jong Gun",
+    "cla": "Mercado Negro",
+    "tecnica": "Soco em Área",
+    "imagem": "assets/gun.jpg",
+    "descricao": "N/A"
+  }
+]

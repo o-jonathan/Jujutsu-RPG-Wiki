@@ -1,0 +1,36 @@
+[
+  {
+    "nome": "Suguru Geto",
+    "cla": "Geto",
+    "tecnica": "Manipulação de Maldições",
+    "imagem": "assets/geto.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Hiroshi Tanaka",
+    "tecnica": "Chamas Azuis / Arauto Maldito",
+    "imagem": "assets/hiroshi.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Kin Kamo",
+    "cla": "Kamo",
+    "tecnica": "Manipulação Sanguínea",
+    "imagem": "assets/kin.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Maki Zenin",
+    "cla": "Zenin",
+    "tecnica": "Restrição Celestial",
+    "imagem": "assets/maki.png",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Tsuki Zenin",
+    "cla": "Zenin",
+    "tecnica": "Dez Sombras",
+    "imagem": "assets/tsuki.jpg",
+    "descricao": "N/A"
+  }
+]

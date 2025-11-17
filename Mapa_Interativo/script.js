@@ -1,9 +1,10 @@
 // Create the map and set initial view (0,0 coordinates with zoom)
 const map = L.map('map', {
-  crs: L.CRS.Simple, // Use simple coordinate system (not real-world)
+  crs: L.CRS.Simple,
   minZoom: -2,
   maxZoom: 3,
-  zoomControl: true
+  zoomControl: true,
+  attributionControl: false
 });
 
 // Image setup
@@ -22,29 +23,50 @@ map.fitBounds(bounds);
 map.setMaxBounds(bounds);
 map.options.maxBoundsViscosity = 1.0;
 
+const overlays = {}
+
 // Define some markers with positions (x, y)
 fetch('./assets/markers.json')
   .then(response => response.json())
   .then(locations => {
     locations.forEach(loc => {
 
+      const layerName = '<img src="./assets/icons/' + loc.icon + '.svg" class="layerControlEmoji"> ' + loc.icon;
+      if (!overlays[layerName]) {
+        overlays[layerName] = L.layerGroup().addTo(map);
+      }
+      
       let iconSize = 32;
       const customIcon = L.icon({
-        iconUrl: './assets/icons/Base.svg',
+        iconUrl: './assets/icons/' + loc.icon + '.svg',
         iconSize: [iconSize, iconSize],
         iconAnchor: [(iconSize / 2), (iconSize / 2)],
         popupAnchor: [0, -(iconSize / 2)]
       });
 
       L.marker(loc.coords, { icon: customIcon })
-        .addTo(map)
-        .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
-        .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
+      .addTo(overlays[layerName])
+      .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
+      .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
     });
+    L.control.layers(null, overlays, {collapsed: false}).addTo(map);
   })
   .catch(err => console.error('Error loading markers:', err));
 
-// Live Coordinates
+  overlays["Domínios"] = L.layerGroup().addTo(map);
+
+  fetch('./assets/areas.json')
+    .then(response => response.json())
+    .then(areas => {
+      areas.forEach(area => {
+        L.polygon(area.coords, {color: area.color})
+        .addTo(overlays["Domínios"]);
+      });
+    }).catch(err => console.error('Error loading areas:', err));
+
+
+  
+  // Live Coordinates
 map.on('mousemove', function (e) {
   document.getElementById('coords').innerHTML = 'Lat: ' + Math.floor(e.latlng.lat) + ' Lon: ' + Math.floor(e.latlng.lng);
 });
