@@ -4,11 +4,12 @@
 }
 
 * {
-    font-family: 'times new roman';
-    user-select: none;
+  font-family: 'times new roman';
+  user-select: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -27,12 +28,12 @@ html, body {
 }
 
 #map .coordbox {
-  opacity: 0.75;
+  opacity: 0.5;
   background-color: var(--primary);
   color: var(--secondary);
   padding-inline: 0.5em;
   padding-block: 0.25em;
-  font-size: 16px;
+  font-size: min(1.8vw, 16px);
   border: 1px solid var(--secondary);
   border-radius: 4px;
   position: absolute;
@@ -41,6 +42,25 @@ html, body {
   z-index: 999;
   transition: all ease 0.3s;
 }
+
+/* Garante que a fonte não fique muito pequena em telas minúsculas */
+@media (max-width: 500px) {
+  #map .coordbox {
+    display: none;
+    font-size: 14px;
+    padding-inline: 0.4em;
+    padding-block: 0.2em;
+  }
+
+  #map .leaflet-popup-content-wrapper {
+    font-size: 10px;
+  }
+
+  #map .leaflet-tooltip {
+    font-size: 12px;
+  }
+}
+
 
 #map .coordbox:hover {
   opacity: 1;
@@ -83,13 +103,13 @@ html, body {
   opacity: 1;
 }
 
-#map .leaflet-control-zoom-out, #map .leaflet-control-zoom-in
-{
+#map .leaflet-control-zoom-out,
+#map .leaflet-control-zoom-in {
   background-color: var(--primary);
   border-bottom-color: var(--secondary);
 }
 
-#map .leaflet-control-zoom-out span, #map .leaflet-control-zoom-in span {
+#map .leaflet-control-zoom-out span,
+#map .leaflet-control-zoom-in span {
   color: var(--secondary);
 }
-

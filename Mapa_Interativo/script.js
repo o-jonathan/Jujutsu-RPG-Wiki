@@ -49,7 +49,7 @@ fetch('./assets/markers.json')
         .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
         .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
     });
-    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+    L.control.layers(null, overlays).addTo(map);
   })
   .catch(err => console.error('Error loading markers:', err));
 

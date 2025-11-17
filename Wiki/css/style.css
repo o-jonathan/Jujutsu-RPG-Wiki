@@ -374,7 +374,30 @@
   /* =======< MAPA >======= */
   .mapframe {
     position: relative;
+    width: 100%;
     height: 100%;
     border: 2px solid var(--accent);
     border-radius: 10px;
   }
+
+  .map-card {
+    width: 100%;
+    min-height: 84%;
+    height: 100%;
+  }
+
+  /*
+ * Regras específicas para Mobile (largura de tela de até 600px)
+ */
+@media (max-width: 600px) {
+  /* O .map-card precisa de uma altura absoluta para o .mapframe funcionar */
+  .map-card {
+    /* Sobrescreve a altura para garantir consistência em mobile */
+    height: 85vh; 
+  }
+
+  /* O .mapframe deve ocupar 100% desse novo tamanho do cartão */
+  .mapframe {
+    height: 100%; 
+  }
+}
