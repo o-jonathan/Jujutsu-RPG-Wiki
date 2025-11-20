@@ -9,6 +9,7 @@ async function carregarDados(tipo) {
   dados.forEach(el => {
     const div = document.createElement('div');
     div.classList.add('card');
+    div.classList.add('hover-up');
     div.innerHTML = `
       ${el.imagem ? `<img src="${el.imagem}" alt="${el.nome}">` : ''}
       <h3>${el.nome}</h3>
