@@ -14,6 +14,13 @@
     "descricao": "N/A"
   },
   {
+    "nome": "Monge",
+    "cla": "",
+    "tecnica": "Aprimoramento Físico",
+    "imagem": "assets/monge.jpg",
+    "descricao": "N/A"
+  },
+  {
     "nome": "Seiryuu Gojo",
     "cla": "Gojo",
     "tecnica": "Limitado",
