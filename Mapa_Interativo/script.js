@@ -4,7 +4,8 @@ const map = L.map('map', {
   minZoom: -2,
   maxZoom: 3,
   zoomControl: true,
-  attributionControl: false
+  attributionControl: false,
+  boxZoom: false
 });
 
 // Image setup
@@ -21,7 +22,7 @@ L.imageOverlay(imageUrl, bounds).addTo(map);
 // Fit map to image bounds
 map.fitBounds(bounds);
 map.setMaxBounds(bounds);
-map.options.maxBoundsViscosity = 1.0;
+map.options.maxBoundsViscosity = 0.75;
 
 const overlays = {}
 
