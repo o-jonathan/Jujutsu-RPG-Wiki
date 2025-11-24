@@ -37,6 +37,21 @@ input[type="checkbox"]:checked::before {
   transform: rotate(45deg);
 }
 
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  height: 1em;
+  width: 1em;
+  border: 2px solid var(--secondary);
+  border-radius: 100%;
+}
+input[type="radio"]:checked {
+  background-color: var(--secondary);
+}
+input[type="radio"]:hover {
+  border-width: 4px;
+}
+
 #map hr {
   border: 1px solid var(--secondary);
 }
@@ -139,4 +154,8 @@ input[type="checkbox"]:checked::before {
 
 #map .leaflet-disabled {
   filter: grayscale(75%);
+}
+
+#map .leaflet-control-layers-separator {
+  border-color: var(--secondary);
 }

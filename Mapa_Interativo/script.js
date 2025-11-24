@@ -11,13 +11,16 @@ const map = L.map('map', {
 // Image setup
 const mapWidth = 2400;  // pixels of your map image
 const mapHeight = 3200;
-const imageUrl = './assets/map.jpg'; // path to your custom RPG map image
 
 // Coordinate bounds for the image
 const bounds = [[0, 0], [mapHeight, mapWidth]];
 
 // Add the image overlay
-L.imageOverlay(imageUrl, bounds).addTo(map);
+
+const underlays = {
+  'Padrão': L.imageOverlay('./assets/map.jpg', bounds).addTo(map),
+  'Editado': L.imageOverlay('./assets/map-clean-oil-flames.jpg', bounds),
+}
 
 // Fit map to image bounds
 map.fitBounds(bounds);
@@ -50,7 +53,7 @@ fetch('./assets/markers.json')
         .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
         .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
     });
-    L.control.layers(null, overlays, {collapsed: L.Browser.mobile}).addTo(map);
+    L.control.layers(underlays, overlays, {collapsed: L.Browser.mobile}).addTo(map);
   })
   .catch(err => console.error('Error loading markers:', err));
 
