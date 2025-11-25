@@ -57,14 +57,14 @@ fetch('./assets/markers.json')
   })
   .catch(err => console.error('Error loading markers:', err));
 
-overlays["Domínios"] = L.layerGroup().addTo(map);
+overlays['<img src="./assets/icons/Area.svg" class="layerControlEmoji"> Áreas'] = L.layerGroup().addTo(map);
 
 fetch('./assets/areas.json')
   .then(response => response.json())
   .then(areas => {
     areas.forEach(area => {
       L.polygon(area.coords, { color: area.color, fillOpacity: 0.5, weight: 4 })
-        .addTo(overlays["Domínios"]);
+        .addTo(overlays['<img src="./assets/icons/Area.svg" class="layerControlEmoji"> Áreas']);
     });
   }).catch(err => console.error('Error loading areas:', err));
 
