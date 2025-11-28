@@ -21,6 +21,13 @@
     "descricao": "N/A"
   },
   {
+    "nome": "Bibliotecária",
+    "cla": "",
+    "tecnica": "Criação de Portais",
+    "imagem": "assets/.jpg",
+    "descricao": "N/A"
+  },
+  {
     "nome": "Seiryuu Gojo",
     "cla": "Gojo",
     "tecnica": "Limitado",
@@ -32,6 +39,20 @@
     "cla": "Kyan",
     "tecnica": "Selamento Kyan",
     "imagem": "assets/aratake.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Kovu Kamo",
+    "cla": "Kamo",
+    "tecnica": "Manipulação Sanguínea",
+    "imagem": "assets/kovu.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Pai da Maki (Kenjaku)",
+    "cla": "Zenin",
+    "tecnica": "",
+    "imagem": "assets/.jpg",
     "descricao": "N/A"
   },
   {
@@ -56,10 +77,24 @@
     "descricao": "N/A"
   },
   {
+    "nome": "Lorde Fraudi",
+    "cla": "Imperial",
+    "tecnica": "",
+    "imagem": "assets/fraudi.jpg",
+    "descricao": "N/A"
+  },
+  {
     "nome": "Jong Gun",
     "cla": "Mercado Negro",
     "tecnica": "Soco em Área",
     "imagem": "assets/gun.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Toji Makhachev",
+    "cla": "Mercado Negro",
+    "tecnica": "Restrição Celestial",
+    "imagem": "assets/toji.jpg",
     "descricao": "N/A"
   }
 ]
