@@ -49,10 +49,10 @@
     "descricao": "N/A"
   },
   {
-    "nome": "Pai da Maki (Kenjaku)",
+    "nome": "Naogito Zenin (Kenjaku)",
     "cla": "Zenin",
     "tecnica": "",
-    "imagem": "assets/.jpg",
+    "imagem": "assets/naogito.jpg",
     "descricao": "N/A"
   },
   {
@@ -70,7 +70,7 @@
     "descricao": "N/A"
   },
   {
-    "nome": "Hayato",
+    "nome": "Hayato Suzuki",
     "cla": "Imperial",
     "tecnica": "Chamas Carmesim",
     "imagem": "assets/hayato.jpg",
@@ -95,6 +95,20 @@
     "cla": "Mercado Negro",
     "tecnica": "Restrição Celestial",
     "imagem": "assets/toji.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Zamaki Yamazaki",
+    "cla": "Yamazaki",
+    "tecnica": "",
+    "imagem": "assets/zamaki.jpg",
+    "descricao": "N/A"
+  },
+  {
+    "nome": "Natsu",
+    "cla": "",
+    "tecnica": "Matador de Dragões",
+    "imagem": "assets/natsu.jpg",
     "descricao": "N/A"
   }
 ]

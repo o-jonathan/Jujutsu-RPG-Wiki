@@ -11,7 +11,7 @@ async function carregarDados(tipo) {
     div.classList.add('card');
     div.classList.add('hover-up');
     div.innerHTML = `
-      ${el.imagem ? `<img src="${el.imagem}" alt="${el.nome}">` : ''}
+      ${el.imagem ? `<img src="${el.imagem}" alt="${el.nome}" onerror="this.onerror=null; this.src='./assets/placeholder.jpg';">` : ''}
       <h3>${el.nome}</h3>
       ${el.cla ? `<p><strong>Clã:</strong> ${el.cla}</p>` : ''}
       ${el.tecnica ? `<p><strong>Técnica:</strong> ${el.tecnica}</p>` : ''}
