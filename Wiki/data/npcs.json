@@ -77,15 +77,15 @@
     "descricao": "N/A"
   },
   {
-    "nome": "Lorde Fraudi",
+    "nome": "Lorde Fraudin",
     "cla": "Imperial",
     "tecnica": "",
-    "imagem": "assets/fraudi.jpg",
+    "imagem": "assets/fraudin.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Jong Gun",
-    "cla": "Mercado Negro",
+    "cla": "Yamazaki / Mercado Negro",
     "tecnica": "Soco em Área",
     "imagem": "assets/gun.jpg",
     "descricao": "N/A"
