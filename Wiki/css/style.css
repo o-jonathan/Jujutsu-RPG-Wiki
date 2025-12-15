@@ -164,6 +164,12 @@ h2 {
   color: var(--accent-light);
 }
 
+.card hr {
+  margin: none;
+  margin-bottom: 0.5rem;
+  border-color: rgb(83, 83, 100);
+}
+
 /* ======= BADGES ======= */
 .badge {
   display: inline-block;

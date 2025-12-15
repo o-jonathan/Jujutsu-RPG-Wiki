@@ -15,6 +15,7 @@ async function carregarDados(tipo) {
       <h3>${el.nome}</h3>
       ${el.cla ? `<p><strong>Clã:</strong> ${el.cla}</p>` : ''}
       ${el.tecnica ? `<p><strong>Técnica:</strong> ${el.tecnica}</p>` : ''}
+      <hr>
       ${el.descricao ? `<p>${el.descricao}</p>` : ''}
     `;
     container.appendChild(div);

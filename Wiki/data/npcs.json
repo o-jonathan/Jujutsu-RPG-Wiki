@@ -8,21 +8,21 @@
   },
   {
     "nome": "Nariyoshi Miyagi",
-    "cla": "",
+    "cla": "Desconhecido",
     "tecnica": "Miyagi-do",
     "imagem": "assets/miyagi.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Monge",
-    "cla": "",
+    "cla": "Desconhecido",
     "tecnica": "Aprimoramento Físico",
     "imagem": "assets/monge.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Bibliotecária",
-    "cla": "",
+    "cla": "Desconhecido",
     "tecnica": "Criação de Portais",
     "imagem": "assets/.jpg",
     "descricao": "N/A"
@@ -51,21 +51,21 @@
   {
     "nome": "Naogito Zenin (Kenjaku)",
     "cla": "Zenin",
-    "tecnica": "",
+    "tecnica": "Desconhecido",
     "imagem": "assets/naogito.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Qin Shi Huang",
     "cla": "Imperial",
-    "tecnica": "",
+    "tecnica": "Não Possui",
     "imagem": "assets/qin.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Arima Kishou",
     "cla": "Imperial",
-    "tecnica": "",
+    "tecnica": "Não Possui",
     "imagem": "assets/arima.jpg",
     "descricao": "N/A"
   },
@@ -79,7 +79,7 @@
   {
     "nome": "Lorde Fraudin",
     "cla": "Imperial",
-    "tecnica": "",
+    "tecnica": "Desconhecido",
     "imagem": "assets/fraudin.jpg",
     "descricao": "N/A"
   },
@@ -100,13 +100,13 @@
   {
     "nome": "Zamaki Yamazaki",
     "cla": "Yamazaki",
-    "tecnica": "",
+    "tecnica": "Desconhecido",
     "imagem": "assets/zamaki.jpg",
     "descricao": "N/A"
   },
   {
     "nome": "Natsu",
-    "cla": "",
+    "cla": "Desconhecido",
     "tecnica": "Matador de Dragões",
     "imagem": "assets/natsu.jpg",
     "descricao": "N/A"
