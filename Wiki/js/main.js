@@ -16,7 +16,7 @@ async function carregarDados(tipo) {
       ${el.cla ? `<p><strong>Clã:</strong> ${el.cla}</p>` : ''}
       ${el.tecnica ? `<p><strong>Técnica:</strong> ${el.tecnica}</p>` : ''}
       <hr>
-      ${el.descricao ? `<p>${el.descricao}</p>` : ''}
+      ${el.descricao ? `<p class="desc">${el.descricao}</p>` : ''}
     `;
     container.appendChild(div);
   });
