@@ -14,6 +14,10 @@ body {
   margin: 0;
 }
 
+input {
+  transition: all 100ms;
+}
+
 input[type="checkbox"] {
   appearance: none;
   margin: 0;
@@ -48,7 +52,8 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-color: var(--secondary);
 }
-input[type="radio"]:hover {
+
+input:hover:not(:checked) {
   border-width: 4px;
 }
 
@@ -121,6 +126,10 @@ input[type="radio"]:hover {
   padding-block: 0;
 }
 
+#map .leaflet-tooltip::before {
+  border-top-color: var(--secondary);
+}
+
 #map .layerControlEmoji {
   width: 1em;
   height: 1em;
@@ -158,4 +167,94 @@ input[type="radio"]:hover {
 
 #map .leaflet-control-layers-separator {
   border-color: var(--secondary);
+}
+
+/* TOASTS */
+#map .toast-container {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 3rem;
+  width: 30rem;
+  margin: 0;
+}
+
+.toast {
+  font-size: 1rem;
+
+  margin: 0;
+  padding: 1rem;
+
+  min-width: 15rem;
+  max-width: 20rem;
+
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+
+  background-color: var(--primary);
+  box-shadow: 0px 1rem 1rem #1e1e1e55;
+
+  animation: toast-slide 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.toast p {
+  color: var(--secondary);
+  margin: 0;
+  margin-left: 2rem;
+  text-align: center;
+}
+
+.toast-info::before {
+  content: '💬';
+  position: absolute;
+  font-size: 1.5rem;
+  left: 0.75rem;
+  top: 0.75rem;
+  color: var(--secondary);
+}
+
+.toast-error::before {
+  content: '⛔';
+  position: absolute;
+  font-size: 1.5rem;
+  left: 0.75rem;
+  top: 0.75rem;
+  color: var(--secondary);
+}
+
+.toast-success::before {
+  content: '✅';
+  position: absolute;
+  font-size: 1.5rem;
+  left: 0.75rem;
+  top: 0.75rem;
+  color: var(--secondary);
+}
+
+@keyframes toast-slide {
+  0% {
+    transform: translateY(-120%) scale(0.95);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0) scale(1.02);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(0) scale(1);
+  }
+  85% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%) scale(0.95);
+    opacity: 0;
+  }
 }

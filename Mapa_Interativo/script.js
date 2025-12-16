@@ -72,14 +72,34 @@ fetch('./assets/areas.json')
 
 // Live Coordinates
 map.on('mousemove', function (e) {
-  document.getElementById('coords').innerHTML = 'Lat: ' + Math.floor(e.latlng.lat) + ' Lon: ' + Math.floor(e.latlng.lng);
+  document.getElementById('coords').innerHTML = 'Lat: ' + Math.round(e.latlng.lat) + ' Lon: ' + Math.round(e.latlng.lng);
 });
 
 map.on('click', function (e) {
   if (e.originalEvent.shiftKey) {
     const { lat, lng } = e.latlng;
-    const text = lat + ', ' + lng;
+    const text = Math.round(lat) + ', ' + Math.round(lng);
     navigator.clipboard.writeText(text);
-    confirm('Copiado: ' + text);
+    toast('Copiado: ' + text);
   }
 })
+
+
+// UTILS
+function toast(msg, type = 'info') {
+  document.querySelectorAll('.toast').forEach(t => t.remove());
+
+  type = String(type).toLowerCase();
+
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.classList.add('toast-' + type);
+
+  const t_msg = document.createElement('p');
+  t_msg.textContent = msg;
+
+  toast.appendChild(t_msg);
+  document.getElementById('t-c').appendChild(toast);
+
+  setTimeout(() => toast.remove(), 4000);
+}
