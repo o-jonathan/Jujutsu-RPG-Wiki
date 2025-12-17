@@ -23,3 +23,25 @@ async function carregarDados(tipo) {
   });
   
 }
+
+function sbCarregar(dados) {
+
+  const container = document.getElementById('conteudo');
+  container.innerHTML = '';
+
+  dados.forEach(el => {
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.classList.add('sheet');
+    div.classList.add('hover-up');
+    div.innerHTML = `
+      ${el.imagem ? `<img src="./assets/${el.imagem}" alt="${el.nome}" onerror="this.onerror=null; this.src='./assets/placeholder.jpg';">` : ''}
+      <h3>${el.nome}</h3>
+      ${el.cla ? `<p><strong>Clã:</strong> ${el.cla}</p>` : ''}
+      ${el.tecnica ? `<p><strong>Técnica:</strong> ${el.tecnica}</p>` : ''}
+      <hr>
+      ${el.descricao ? `<p class="desc">${el.descricao}</p>` : ''}
+    `;
+    container.appendChild(div);
+  });
+}

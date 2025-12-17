@@ -27,7 +27,17 @@
     <footer>© 2025 Jujutsu RPG — Portal da Campanha</footer>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/database.js"></script>
   <script src="js/main.js"></script>
-  <script>carregarDados('fichas');</script>
+  <script>
+    async function carregarPersonagens() {
+      const dados = await sbRead('personagens', 'player');
+      console.log(dados)
+      sbCarregar(dados);
+    }
+
+    carregarPersonagens();
+  </script>
 </body>
 </html>
