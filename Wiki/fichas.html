@@ -33,7 +33,7 @@
   <script src="js/main.js"></script>
   <script>
     async function carregarPersonagens() {
-      const dados = await sbRead('personagens', 'player');
+      const dados = JSON.parse(localStorage.getItem('players'));
       sbCarregar(dados);
     }
 

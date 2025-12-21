@@ -35,7 +35,21 @@
         <h1>LOADING...</h1>
         <div class="loader"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./database.js"></script>
     <script>
+        async function loadData() {
+            localStorage.clear();
+
+            const players = JSON.stringify(await sbRead('personagens', 'player'));
+            const npcs = JSON.stringify(await sbRead('personagens', 'npc'));
+
+            localStorage.setItem('players', players);
+            localStorage.setItem('npcs', npcs);
+
             window.location.replace("./Wiki/index.html");
+        }
+
+        loadData();
     </script>
 </body>
