@@ -428,3 +428,32 @@ footer {
 .hover-up:hover {
   transform: translateY(-5px);
 }
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--accent-light);
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  align-self: flex-end;
+  transition: all var(--transition);
+  box-shadow: 0 0 20px rgba(107, 0, 255, 0.1);
+}
+
+.btn-reset:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(107, 0, 255, 0.3);
+
+  img {
+    transform: rotateZ(180deg);
+  }
+}
+
+.btn-reset img {
+  height: 1.5rem;
+  transition: all var(--transition);
+}
