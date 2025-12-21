@@ -7,11 +7,10 @@ const sbKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJl
 const sb = window.supabase.createClient(sbURL, sbKEY);
 
 /// READ
-async function sbRead(table, tipo) {
+async function sbRead(table) {
     const {data, error} = await sb
     .from(table)
-    .select('*')
-    .eq('tipo', tipo);
+    .select('*');
 
     if (error) {
         console.error(error);

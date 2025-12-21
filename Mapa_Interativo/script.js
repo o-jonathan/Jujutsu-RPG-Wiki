@@ -1,3 +1,7 @@
+if (!localStorage.getItem('underlay')) {
+  localStorage.setItem('underlay', 'Padrão');
+}
+
 // Create the map and set initial view (0,0 coordinates with zoom)
 const map = L.map('map', {
   crs: L.CRS.Simple,
@@ -18,9 +22,11 @@ const bounds = [[0, 0], [mapHeight, mapWidth]];
 // Add the image overlay
 
 const underlays = {
-  'Padrão': L.imageOverlay('./assets/map.jpg', bounds).addTo(map),
+  'Padrão': L.imageOverlay('./assets/map.jpg', bounds),
   'Editado': L.imageOverlay('./assets/map-clean-oil-flames.jpg', bounds),
 }
+
+underlays[localStorage.getItem('underlay')].addTo(map);
 
 // Fit map to image bounds
 map.fitBounds(bounds);
@@ -82,6 +88,10 @@ map.on('click', function (e) {
     navigator.clipboard.writeText(text);
     toast('Copiado: ' + text);
   }
+})
+
+map.on('baselayerchange', function (e) {
+  localStorage.setItem('underlay', e.name);
 })
 
 

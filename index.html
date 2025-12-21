@@ -41,11 +41,20 @@
         async function loadData() {
             localStorage.clear();
 
-            const players = JSON.stringify(await sbRead('personagens', 'player'));
-            const npcs = JSON.stringify(await sbRead('personagens', 'npc'));
+            const players = [];
+            const npcs = [];
+            const dados = await sbRead('personagens');
 
-            localStorage.setItem('players', players);
-            localStorage.setItem('npcs', npcs);
+            dados.forEach(el => {
+                if (el.tipo === 'player') {
+                    players.push(JSON.stringify(el))
+                } else if (el.tipo === 'npc') {
+                    npcs.push(JSON.stringify(el))
+                }
+            });
+
+            localStorage.setItem('players', '[' + players.toString() + ']');
+            localStorage.setItem('npcs', '[' + npcs.toString() + ']');
 
             window.location.replace("./Wiki/index.html");
         }
