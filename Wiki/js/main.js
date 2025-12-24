@@ -52,3 +52,11 @@ function sbCarregar(dados) {
     container.appendChild(div);
   });
 }
+
+window.onscroll = function() {
+  if (window.scrollY >= 1000) {
+    document.getElementById('btn-goup').classList.add('show');
+  } else {
+    document.getElementById('btn-goup').classList.remove('show');
+  }
+}

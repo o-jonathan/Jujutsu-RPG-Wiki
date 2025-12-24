@@ -19,7 +19,6 @@ const mapHeight = 3200;
 // Coordinate bounds for the image
 const bounds = [[0, 0], [mapHeight, mapWidth]];
 
-// Add the image overlay
 
 const underlays = {
   'Padrão': L.imageOverlay('./assets/map.jpg', bounds),
@@ -33,46 +32,47 @@ map.fitBounds(bounds);
 map.setMaxBounds(bounds);
 map.options.maxBoundsViscosity = 0.75;
 
+const micons = {}
 const overlays = {}
-
-// Define some markers with positions (x, y)
-fetch('./assets/markers.json')
-  .then(response => response.json())
-  .then(locations => {
-    locations.forEach(loc => {
-
-      const layerName = '<img src="./assets/icons/' + loc.icon + '.svg" class="layerControlEmoji"> ' + loc.icon;
-      if (!overlays[layerName]) {
-        overlays[layerName] = L.layerGroup().addTo(map);
-      }
-
-      let iconSize = 32;
-      const customIcon = L.icon({
-        iconUrl: './assets/icons/' + loc.icon + '.svg',
-        iconSize: [iconSize, iconSize],
-        iconAnchor: [(iconSize / 2), (iconSize / 2)],
-        popupAnchor: [0, -(iconSize / 2)]
-      });
-
-      L.marker(loc.coords, { icon: customIcon })
-        .addTo(overlays[layerName])
-        .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
-        .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
-    });
-    L.control.layers(underlays, overlays, {collapsed: L.Browser.mobile}).addTo(map);
-  })
-  .catch(err => console.error('Error loading markers:', err));
-
 overlays['<img src="./assets/icons/Area.svg" class="layerControlEmoji"> Áreas'] = L.layerGroup().addTo(map);
 
-fetch('./assets/areas.json')
-  .then(response => response.json())
-  .then(areas => {
-    areas.forEach(area => {
-      L.polygon(area.coords, { color: area.color, fillOpacity: 0.5, weight: 4 })
-        .addTo(overlays['<img src="./assets/icons/Area.svg" class="layerControlEmoji"> Áreas']);
+// Markers
+const marcadores_l = JSON.parse(localStorage.getItem('marcadores'));
+
+marcadores_l.forEach(loc => {
+
+  const layerName = '<img src="./assets/icons/' + loc.icon + '.svg" class="layerControlEmoji"> ' + loc.icon;
+  if (!overlays[layerName]) {
+    overlays[layerName] = L.layerGroup().addTo(map);
+  }
+
+  if (!micons[loc.icon]) {
+    const iconSize = 32;
+    micons[loc.icon] = L.icon({
+      iconUrl: './assets/icons/' + loc.icon + '.svg',
+      iconSize: [iconSize, iconSize],
+      iconAnchor: [(iconSize / 2), (iconSize / 2)],
+      popupAnchor: [0, -(iconSize / 2)]
     });
-  }).catch(err => console.error('Error loading areas:', err));
+  }
+
+  L.marker(loc.coords, { icon: micons[loc.icon] })
+    .addTo(overlays[layerName])
+    .bindTooltip(loc.name, { permanent: true, direction: 'top', offset: [0, -10] })
+    .bindPopup('<b>' + loc.name + '</b><hr>' + loc.description);
+});
+
+L.control.layers(underlays, overlays, { collapsed: L.Browser.mobile }).addTo(map);
+
+
+// Areas
+const areas_l = JSON.parse(localStorage.getItem('areas'));
+
+areas_l.forEach(area => {
+  L.polygon(area.coords, { color: area.color, fillOpacity: 0.5, weight: 4 })
+    .bindPopup('<b>' + area.name + '</b><hr>' + area.description)
+    .addTo(overlays['<img src="./assets/icons/Area.svg" class="layerControlEmoji"> Áreas']);
+});
 
 
 

@@ -457,3 +457,36 @@ footer {
   height: 1.5rem;
   transition: all var(--transition);
 }
+
+.btn-goup {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--accent-light);
+  border-radius: 8px;
+  cursor: pointer;
+  position: fixed;
+  align-self: flex-end;
+  bottom: 2.5rem;
+  transition: all var(--transition);
+  box-shadow: 0 0 20px rgba(107, 0, 255, 0.1);
+  transform: translateX(10dvw);
+}
+
+.btn-goup.show {
+  right: 2.5rem;
+  transform: translateX(0);
+}
+
+.btn-goup.show:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(107, 0, 255, 0.3);
+}
+
+.btn-goup img {
+  height: 1.5rem;
+  transition: all var(--transition);
+}

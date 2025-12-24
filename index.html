@@ -43,9 +43,9 @@
 
             const players = [];
             const npcs = [];
-            const dados = await sbRead('personagens');
+            const dados_p = await sbRead('personagens');
 
-            dados.forEach(el => {
+            dados_p.forEach(el => {
                 if (el.tipo === 'player') {
                     players.push(JSON.stringify(el))
                 } else if (el.tipo === 'npc') {
@@ -53,8 +53,44 @@
                 }
             });
 
+            const marcadores = [];
+            const dados_m = await sbRead('marcadores');
+
+            dados_m.forEach(el => {
+                const aux_el = {
+                    name: el.name,
+                    coords: [el.x, el.y],
+                    description: el.description,
+                    icon: el.icon
+                };
+                marcadores.push(JSON.stringify(aux_el));
+            });
+
+            const areas = [];
+            const dados_a = await sbRead('areas');
+            const dados_a_c = await sbRead('areas_coordenadas');
+
+            dados_a.forEach(el => {
+                const aux_coords = [];
+                dados_a_c.forEach(e => {
+                    if (e.area_id === el.id) {
+                        aux_coords.push([e.x, e.y]);
+                    }
+                });
+
+                const aux_el = {
+                    name: el.name,
+                    coords: aux_coords,
+                    color: el.color,
+                    description: el.description
+                };
+                areas.push(JSON.stringify(aux_el));
+            });
+
             localStorage.setItem('players', '[' + players.toString() + ']');
             localStorage.setItem('npcs', '[' + npcs.toString() + ']');
+            localStorage.setItem('marcadores', '[' + marcadores.toString() + ']');
+            localStorage.setItem('areas', '[' + areas.toString() + ']');
 
             window.location.replace("./Wiki/index.html");
         }
