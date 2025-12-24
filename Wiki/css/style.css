@@ -459,6 +459,7 @@ footer {
 }
 
 .btn-goup {
+  opacity: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -473,10 +474,11 @@ footer {
   bottom: 2.5rem;
   transition: all var(--transition);
   box-shadow: 0 0 20px rgba(107, 0, 255, 0.1);
-  transform: translateX(10dvw);
+  transform: translateX(200%);
 }
 
 .btn-goup.show {
+  opacity: 1;
   right: 2.5rem;
   transform: translateX(0);
 }
