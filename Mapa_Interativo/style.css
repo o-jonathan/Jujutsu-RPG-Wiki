@@ -117,6 +117,14 @@ input:hover:not(:checked) {
   border-radius: 8px;
 }
 
+#map .leaflet-popup-tip {
+  background-color: var(--secondary);
+}
+
+#map .leaflet-popup-close-button span {
+  color: var(--secondary);
+}
+
 #map .leaflet-tooltip {
   color: var(--secondary);
   background: var(--primary);

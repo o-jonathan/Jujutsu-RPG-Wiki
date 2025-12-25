@@ -432,6 +432,7 @@ footer {
 }
 
 .btn-reset {
+  all: unset;
   user-select: none;
   display: flex;
   align-items: center;
@@ -445,6 +446,7 @@ footer {
   align-self: flex-end;
   transition: all var(--transition);
   box-shadow: 0 0 20px rgba(107, 0, 255, 0.1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-reset:hover {
@@ -462,11 +464,18 @@ footer {
 }
 
 .btn-reset img {
+  -webkit-user-drag: none;
   height: 1.5rem;
   transition: all var(--transition);
 }
 
+.btn-reset:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
 .btn-goup {
+  all: unset;
   user-select: none;
   opacity: 0;
   z-index: 100;
@@ -484,6 +493,8 @@ footer {
   transition: all var(--transition);
   box-shadow: 0 0 20px rgba(107, 0, 255, 0.1);
   transform: translateX(200%);
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-goup.show {
@@ -494,6 +505,10 @@ footer {
 .btn-goup.show:hover {
   transform: scale(1.1);
   box-shadow: 0 0 30px rgba(107, 0, 255, 0.3);
+
+  img {
+    animation: scrollup .6s ease;
+  }
 }
 
 .btn-goup.show:active {
@@ -502,8 +517,29 @@ footer {
 }
 
 .btn-goup img {
+  -webkit-user-drag: none;
   height: 1.5rem;
   transition: all var(--transition);
+}
+
+.btn-goup.show:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+@keyframes scrollup {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3rem);
+  }
+  50.1% {
+    transform: translateY(3rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 800px) {
