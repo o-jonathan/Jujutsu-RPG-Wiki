@@ -10,7 +10,8 @@ const sb = window.supabase.createClient(sbURL, sbKEY);
 async function sbRead(table) {
     const {data, error} = await sb
     .from(table)
-    .select('*');
+    .select('*')
+    .order('id');
 
     if (error) {
         console.error(error);

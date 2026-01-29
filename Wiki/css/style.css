@@ -180,6 +180,19 @@ h2 {
   border-color: rgb(83, 83, 100);
 }
 
+.card.dead {
+  img {
+    filter: grayscale(1);
+    transition: all var(--transition);
+  }
+}
+
+.card.dead:hover {
+  img {
+    filter: grayscale(0);
+  }
+}
+
 /* ======= BADGES ======= */
 .badge {
   display: inline-block;
